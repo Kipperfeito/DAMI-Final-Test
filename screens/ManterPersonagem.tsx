@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import { useState } from 'react';
 import { Personagem } from '../model/Personagem';
 import { PersonagemService } from '../service/PersonagemService';
@@ -23,13 +23,18 @@ const ManterPersonagem = () => {
             alert('Personagem ' + personagem.id + ' - ' + personagem.nome + ' adicionado!');
             Limpar();
         } catch (err) {
-            console.error('Erro ao salvar personagem:', error);
+            console.error('Erro ao salvar personagem:', err);
             alert('Erro ao salvar o personagem.');
         }
     }
 
     return (
         <View style={styles.container}>
+            <Image
+                source={require('../assets/DungeonBlitzLogo.png')}
+                style={styles.cabeca}
+                resizeMode="contain"
+            />
             <Text style={styles.titulo}>CADASTRO DE PERSONAGENS</Text>
 
             <TextInput
@@ -60,7 +65,7 @@ const ManterPersonagem = () => {
                 value={formPersonagem.idade?.toString()}
                 onChangeText={
                     (valor) => setFormPersonagem({...
-                        formPersonagem, idade: valor 
+                        formPersonagem, idade: parseInt(valor) 
                     })
                 }
             />

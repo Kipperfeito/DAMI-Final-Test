@@ -1,11 +1,12 @@
 import React, { useEffect } from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, SafeAreaView, ImageBackground } from 'react-native';
 import { useState } from 'react';
 import { Personagem } from './model/Personagem';
 import { Database } from './database/Database';
 import ManterPersonagem from './screens/ManterPersonagem.tsx'
 import ListarPersonagem from './screens/ListarPersonagem.tsx'
+import styles from './styles/listar-estilo';
 
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
@@ -19,7 +20,11 @@ function ManterScreen(): JSX.Element {
 }
 function ListarScreen ({}) {
   return(
-    <ListarPersonagem></ListarPersonagem>
+    <ImageBackground source={require('./assets/map.jpg')} style={styles.background}>
+      <SafeAreaView>
+        <ListarPersonagem />
+      </SafeAreaView>
+    </ImageBackground>
   )
 }
 
@@ -42,12 +47,3 @@ export default function App() {
     </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

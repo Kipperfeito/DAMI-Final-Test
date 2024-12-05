@@ -7,10 +7,15 @@ export default StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
     },
+    cabeca: {
+      width: '100%',
+      height: '30%',
+    },
     titulo: {
-      fontSize: 20,
-      fontWeight: 700,
-      marginBottom: 30
+      fontSize: 22,
+      fontWeight: 'bold',
+      color: '#333333',
+      marginBottom: 10
     },
     input: {
       backgroundColor: '#d1d1d1',
@@ -21,7 +26,7 @@ export default StyleSheet.create({
       fontSize: 15
     },
     botao: {
-      backgroundColor: "#0782F9",
+      backgroundColor: "#eb4034",
       width: "50%",
       padding: 15,
       borderRadius: 10,
@@ -39,12 +44,12 @@ export default StyleSheet.create({
       padding: 15,
       borderRadius: 10,
       alignItems: "center",
-      borderColor: "#0782F9",
+      borderColor: "#eba234",
       borderWidth: 2,
       marginTop: 20
     },
     botaoSecText: {
-      color: "#0782F9",
+      color: "#eba234",
       fontSize: 15,
       fontWeight: 500
     }

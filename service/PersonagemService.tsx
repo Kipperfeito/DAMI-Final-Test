@@ -38,11 +38,11 @@ export class PersonagemService {
         return result.rowsAffected > 0
 }
 
-    static async delete(obj: Personagem) {
+    static async delete(id) {
         const query = `DELETE FROM ${this.TABLE} where id = ?;`
-        const result = await Database.runQuery(query, [obj.id])
+        const result = await Database.runQuery(query, [id])
 
-        return result.rowsAffected > 0
+        return result;
     }
 
     static async tryRemoveImage(id: number) {
